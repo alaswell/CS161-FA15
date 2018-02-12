@@ -1,0 +1,96 @@
+import java.util.Random;
+
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Instrument {
+
+	protected Member member; 
+	protected String notes = "";
+	protected int octave = 0;
+
+	public Instrument(String notes, int octave, Member member) {
+		this.setNotes(notes);
+		this.setMember(member);
+		this.setOctave(octave);
+	}
+
+
+	public Member getMember() {
+		return member;
+	}
+
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
+
+
+	public static String getNotes() {
+		String[] newNotes = new String[notes.length()];
+		String[] randNotes = {"A", "B", "C", "D", "E", "F", "G"};
+
+		// replace strings based on skill
+		for(int i = 0; i < notes.length(); i++){
+			double rand0 = Math.random(); 
+			Random rand1 = new Random();
+			int index = rand1.nextInt(6);
+			
+			switch (this.getMember().getLevel()) {
+			
+			case 1:
+				if(rand0 > .5)
+					newNotes[i] = randNotes[index];
+				break;
+			
+			case 2:
+				if(rand0 > .8)
+					newNotes[i] = randNotes[index];
+				break;
+				
+			default:
+				break;				
+			}
+		}
+		
+		System.out.println(newNotes);
+		//Now add in octave
+		for(int i = 0; i < newNotes.length; i++) {
+			
+		}
+
+
+
+		return notes;
+	}
+
+	@Override
+	public String toString() {
+		return null;
+	}
+
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+
+	public int getOctave() {
+		return octave;
+	}
+
+
+	public void setOctave(int octave) {
+		this.octave = octave;
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

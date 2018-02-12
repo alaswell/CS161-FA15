@@ -1,0 +1,19 @@
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Violin extends Instrument {
+	static int octave = 6;
+
+	public Violin(String string, Member jim) {
+		super(string, octave, jim);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

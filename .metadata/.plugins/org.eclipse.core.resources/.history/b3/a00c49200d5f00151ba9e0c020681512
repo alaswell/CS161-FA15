@@ -1,0 +1,19 @@
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Cello extends Instrument {
+	static int octave = 4;
+
+	public Cello(String string, Member name) {
+		super(string, octave, name);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

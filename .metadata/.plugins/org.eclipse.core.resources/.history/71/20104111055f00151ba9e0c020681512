@@ -1,0 +1,13 @@
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Cello extends Instrument {
+
+	public Cello(String string, Member mary) {
+		super(string, octave, mary);
+	}
+
+}

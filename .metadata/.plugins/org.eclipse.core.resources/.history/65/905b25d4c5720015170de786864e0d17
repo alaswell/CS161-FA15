@@ -1,0 +1,93 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+// P4 Assignment
+// Author: alaswell
+// Date: Oct 14, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Maze {
+	private int nrows = 0;
+	private int ncols = 0;
+	private int startRow;
+	private int startCol;
+	private Character[][] map;
+	private String path = "";
+
+	public void initializeFromFile(String filename) {
+		try {
+			Scanner scanner = new Scanner(new File(filename));
+		
+			// get the dimensions
+			nrows = scanner.nextInt();
+			ncols = scanner.nextInt();
+			// allocate to char array
+			map = new Character[nrows][ncols];
+		
+			// get the rest of the map
+			while (scanner.hasNext()) {
+				String line = scanner.nextLine();
+				char[]	thingsThisLine = line.toCharArray();
+				
+				for(int i = 0; i < ncols; i++)
+					for(int j = 0; j < ncols; j++) {
+						map[i][j] = thingsThisLine[j];
+						if(thingsThisLine[j] == 'S') {
+							startRow = i;
+							startCol = j;
+						}
+					}				
+			}
+			scanner.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
+	}
+
+	public String findPathFrom(int row, int col) {
+		// BASE CASE(S)
+		if(row >= nrows || col >= ncols)
+			return "";
+		else if(map[row][col].compareTo('#') == 1 || map[row][col].compareTo('.') == 1)
+			return "";
+		else if(map[row][col].compareTo('G') == 1)
+			return "G";
+		
+		// RECURSIVE
+		map[row][col] = '.';
+		if(findPathFrom(row-1,col) == "G")
+			path = "U" + path;
+		else if(findPathFrom(row,col+1) == "G")
+			path = "R" + path;
+		else if(findPathFrom(row+1,col) == "G")
+			path = "D" + path;
+		else if(findPathFrom(row,col-1)== "G")
+			path = "L" + path;
+		else
+			map[row][col] = ' ';		
+		return path;
+	}
+
+	// calls findPathFrom(startRow, startCol) and returns what it returns
+	// and does anything else that is necessary
+	public String findPath() {
+		return findPathFrom(startRow, startCol);
+	}
+
+	// returns a String representation of the map character array
+	public String toString() {
+		return map.toString();
+	}
+
+
+	public static void main(String[] args) {
+		Maze m = new Maze();
+		m.initializeFromFile("maze1.txt");
+
+	}
+
+}

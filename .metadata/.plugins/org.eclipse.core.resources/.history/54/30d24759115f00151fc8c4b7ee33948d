@@ -1,0 +1,30 @@
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class Violla extends Instrument {
+	static int octave = 5;
+	static String name = "Violla";
+
+	public Violla(String string, Member name) {
+		super(string, octave, name);
+	}
+	
+	String getName() {
+		return this.getName();
+	}
+	
+
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

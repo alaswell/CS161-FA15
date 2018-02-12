@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+// P3 Assignment
+// Author: alaswell
+// Date: Sep 18, 2015
+// Class: CS161
+// Email: alaswell@cs.colostate.edu
+
+public class P3 {
+
+	public static void main(String[] args) {
+
+	     boolean play = false;
+	     if (args.length > 0 && args[0].equals("play"))
+	         play = true;
+
+	     Orchestra duet = new Orchestra();
+
+	     Member jim = new Member("Jim",1);
+	     Member mary = new Member("Mary",1);
+
+	     duet.addInstrument(new Violin("C D E F E D Cw", jim));
+	     duet.addInstrument(new Cello("E F G A G F Ew", mary));
+
+	     System.out.println(duet.jfugueString());
+	     if (play) duet.play();
+
+	     System.out.println("Everyone practices.");
+	     jim.practice();
+	     mary.practice();
+	     System.out.println(duet.jfugueString());
+	     if (play) duet.play();
+
+	     System.out.println("Everyone practices again.");
+	     jim.practice();
+	     mary.practice();
+	     System.out.println(duet.jfugueString());
+	     if (play) duet.play();
+
+	     ArrayList<String> violinPlayers = duet.whoPlays("violin");
+	     System.out.print("Violin players are:");
+	     for (String who : violinPlayers) {
+	         System.out.print(" " + who);
+	     }
+	     System.out.println();
+
+	     String what = duet.playedBy("jim");
+	     if (what != null)
+	         System.out.println("Jim plays " + what);
+	     else
+	         System.out.println("Jim is not playing.");
+
+	 }
+
+}

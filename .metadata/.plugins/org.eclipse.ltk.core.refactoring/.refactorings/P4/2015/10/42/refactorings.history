@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;maze1.txt&apos; to &apos;P4/src/(default package)&apos;&#x0A;- Original project: &apos;P4&apos;&#x0A;- Destination element: &apos;P4/src/(default package)&apos;&#x0A;- Original element: &apos;maze1.txt&apos;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;" element1="maze1.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1444862749748" units="0" version="1.0"/>
+</session>
