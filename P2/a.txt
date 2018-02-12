@@ -1,0 +1,2 @@
+This is the a.txt file.  It contains colors, like blue,
+red, green, orange, and yellow.  

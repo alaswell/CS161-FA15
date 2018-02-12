@@ -1,0 +1,4 @@
+Jim Johnson,student,graduate,3.8,0
+Pam Petunia,faculty,,,94000
+Bob Brown,staff,,,120000
+Deb Dickinson,student,undergraduate,3.5,0

@@ -1,0 +1,11 @@
+Recursion - 3parts
+
+1) The work
+2) Recursive Call
+3) Base Case
+
+RULES
+
+1) Smaller set rule - always work on the smallest problem (0/1) so you can hit your base case
+2) Good Karma rule - think of being at only one level and think of the other method call as doing the correct work for you as long as you are doing the work correct work here
+3) 

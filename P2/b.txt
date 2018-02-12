@@ -1,0 +1,2 @@
+File b.txt is all about watercolor paints, such as indigo blue,
+sun yellow, pale green and deep red.
